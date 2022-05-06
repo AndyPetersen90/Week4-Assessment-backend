@@ -1,7 +1,7 @@
 const complimentBtn = document.getElementById("complimentButton")
 const fortuneBtn = document.getElementById("fortuneButton")
 const posterBtn = document.getElementById("add-new-poster")
-const posterInput = document.getElementById("new-poster")
+const posterInput = document.querySelector('#new-poster')
 const imgLocation = document.getElementById("imglocation")
 
 
