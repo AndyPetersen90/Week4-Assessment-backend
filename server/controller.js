@@ -1,3 +1,10 @@
+let posters = [
+    {
+        id: 0,
+        URL: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.teachercreated.com%2F20210910%2Fcovers%2F900sqp%2F7446.png&imgrefurl=https%3A%2F%2Fwww.teachercreated.com%2Fproducts%2Fyou-are-all-kinds-of-amazing-positive-poster-7446&tbnid=tKt8mQ8cukx8YM&vet=12ahUKEwjXy4Cks8v3AhUCIH0KHQA6A1cQ94IIKAt6BQgBEJgD..i&docid=-6urV6FvGSnpuM&w=900&h=900&q=uplifting%20posters&ved=2ahUKEwjXy4Cks8v3AhUCIH0KHQA6A1cQ94IIKAt6BQgBEJgD'
+
+    }
+]
 
 module.exports = {
 
@@ -19,6 +26,24 @@ module.exports = {
         let randomCompliment = fortunes[randomIndex];
       
         res.status(200).send(randomCompliment);
-    }
+    },
 
+    addPoster: (req, res) => {
+        const newPoster = req.body
+    },
+
+    deletePoster: (req, res) => {
+        let existingposter = req.params.id;
+        posters.splice(existingposter, 1);
+        res.status(200).send(posters);
+
+    },
+
+    editPoster: (req, res) => {
+        let id = req.params.id;
+        let url = req.body;
+
+        posters[id].URL = url;
+
+    }
 }
