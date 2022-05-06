@@ -47,7 +47,9 @@ posterBtn.addEventListener('click', addPoster);
 
 const deletePoster = () => {
     axios.delete("http://localhost:4000/api/posters/:id")
-        .then()
+        .then((res) => {
+            console.log("Poster Deleted.")
+        })
         .catch((err) =>{
             console.log(err)
         })
@@ -55,7 +57,9 @@ const deletePoster = () => {
 
 const editPoster = (id, type) => {
     axios.put("http://localhost:4000/api/posters/:id", type)
-        .then()
+        .then((res) => {
+            console.log("poster updated.")
+        })
         .catch((err) =>{
             console.log(err)
         })
