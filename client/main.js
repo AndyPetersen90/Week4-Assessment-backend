@@ -89,8 +89,25 @@ const addFortune = () => {
 
 newFortuneBtn.addEventListener('click', addFortune)
 
+//Delete Function//
 
+const deleteBtn = document.getElementById('delete-button')
+const deleteinput = document.getElementById('delete-input')
 
+const deleteFortune = () => {
+    console.log(deleteinput.value) //testing out to make sure its getting this far.
+
+    axios.delete('//API URL//.${deleteInput.value}')
+        .then(res => {
+            alert(res.data)
+            deleteInput.value = '' //this clears the value from the input box
+        })
+        .catch(err => {
+            alert('Does not compute')
+        })
+
+}
+deleteBtn.addEventListener('click', deleteFortune)
 
 
 */

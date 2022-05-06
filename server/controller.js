@@ -40,7 +40,7 @@ module.exports = {
     },
 
     editPoster: (req, res) => {
-        let id = req.params.id;
+        let id = req.params;
         let url = req.body;
 
         posters[id].URL = url;
@@ -63,6 +63,21 @@ addFortune: (req, res) => {
 
 }
 
+deleteFortune(req, res) => {
+    const {id} = req.params
+
+   if(fortunes[+id]){
+        fortunes.splice(id, 1);
+
+        res.status(200).send('Fortune Removed')
+   } else {
+       res.sendStatus(400)
+   }
+
+}
+
+//put expects and and indication of what is to be updated and what object/string you are updating//
+//would need two inputs and a button one to indicate the change, and the other to indicate who//
 
 
 */
