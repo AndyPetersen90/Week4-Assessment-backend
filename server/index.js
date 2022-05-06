@@ -18,4 +18,16 @@ app.delete("/api/posters/:id", deletePoster);
 
 app.put("/api/posters/:id", editPoster);
 
+/*Alec Review
+
+You can use postman with the local api url to test out your backend. this is for those 
+who write their backend first.
+
+app.post("/api/fortune", addFortune);
+
+
+
+*/
+
+
 app.listen(4000, () => console.log("Server running on 4000"));
