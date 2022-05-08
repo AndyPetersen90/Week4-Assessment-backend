@@ -6,17 +6,17 @@ app.use(cors());
 app.use(express.json());
 
 
-const { getCompliment, getFortune, addPoster, deletePoster, editPoster/*,addFortune, deleteFortune*/} = require('./controller')
+const { getCompliment, getFortune, addFortune, deleteFortune, editFortune/*,addFortune, deleteFortune*/} = require('./controller')
 
 app.get("/api/compliment", getCompliment);
 
 app.get("/api/fortune", getFortune);
 
-app.post("/api/posters/", addPoster);
+app.post("/api/fortune", addFortune);
 
-app.delete("/api/posters/:id", deletePoster);
+app.delete("/api/fortune/:id", deleteFortune);
 
-app.put("/api/posters/:id", editPoster);
+app.put("/api/fortune/:id", editFortune);
 
 /*Alec Review
 

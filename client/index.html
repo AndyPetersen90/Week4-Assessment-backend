@@ -11,16 +11,18 @@
       <!-- lets do texts, we can make post, put, and delete to add, 
       edit, and remove fortunes-->
       <h4>Submit your own posters.</h4>
-      <input type="url" placeholder="poster url" id="new-poster">
-      <br> 
-      <button id="add-new-poster">Submit your poster.</button><br><br>
-      <input type="url" placeholder="updated url" id="editposter"><br>
-      <button id="edit-poster">submit edited url</button> <br><br>
-      <button id="Delete-poster">Delete poster here.</button><br>   
-    </form><br>
-    <section id="imglocation">
-      <img src="" alt="poster missing">
-    </section>  
+
+      <input id="new-fortune" type="text" placeholder="new-fortune" ><br> 
+      <button id="add-new-fortune">Submit your poster.</button><br><br>
+
+      <input type="number" placeholder="Fortune ID" id="delete-fortune-id"><br>
+      <button id="delete-fortune-button">Delete Fortune</button> <br><br>
+
+      <input type="number" placeholder="Fortune ID" id="edit-fortune-id"><br>
+      <input type="text" placeholder="Edited Fortune" id="edit-fortune-text"><br>
+      <button id="edit-fortune-btn">Edit Fortune.</button><br> 
+
+    </form>
   
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
