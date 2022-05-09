@@ -10,6 +10,8 @@ const getCompliment = () => {
 };
 complimentBtn.addEventListener('click', getCompliment)
 
+
+
 const fortuneBtn = document.getElementById("fortuneButton")
 
 const getFortune = () => {
@@ -22,9 +24,10 @@ const getFortune = () => {
 
 fortuneBtn.addEventListener('click', getFortune);
 
-const newFortuneBtn = document.querySelector("#add-new-fortune")
-const fortuneInput = document.getElementById("new-fortune")
-// console.log(fortuneInput.value);
+
+
+const newFortuneBtn = document.querySelector('#add-new-fortune')
+const fortuneInput = document.getElementById('new-fortune')
 
 const addFortune = () => {
     
@@ -33,7 +36,7 @@ const addFortune = () => {
     axios.post("http://localhost:4000/api/fortune", {newFortune: fortuneInput.value})
     .then(res => {
         console.log(res.data);
-        alert(res.value)
+        alert(res.data)
 
         
     })
@@ -43,14 +46,16 @@ newFortuneBtn.addEventListener('click', addFortune);
 
 
 const deleteFortuneBtn = document.getElementById('delete-fortune-button')
-const deleteFortuneInput = document.querySelector('#delete-fortune-id')
-//Thought I had this right, but I cant seem to get the fortunes to delete//
-const deleteFortune = () => {
+const deleteFortuneInput = document.getElementById('delete-fortune-id')
+//I get a confirmation it worked, but it doesnt actually delete any fortunes.//
 
-    axios.delete(`http://localhost:4000/api/fortune/:id`)
-        .then((res) => {
+const deleteFortune = () => {
+    console.log(deleteFortuneInput.value);
+
+    axios.delete(`http://localhost:4000/api/fortune/${deleteFortuneInput.value}`)
+        .then(res => {
             alert(res.data);
-            console.log("Fortune Deleted.")
+            deleteFortuneInput.value = ''
         })
         .catch((err) =>{
             alert('Does not compute')
